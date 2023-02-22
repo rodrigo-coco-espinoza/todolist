@@ -2,18 +2,26 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
     <title>To Do List</title>
   </head>
   <body>
-    <h1><%= kinfOfDay %></h1>
-    <ul>
+    <div class="box" id="heading">
+      <h1><%= kinfOfDay %></h1>
+    </div>
+    <div class="box">
       <% for ( const item of itemList ){ %>
-        <li><%= item %></li>
+        <div class="item">
+          <input type="checkbox">
+          <p><%= item %></p>
+        </div>
       <% } %>
-    </ul>
-    <form class="" action="/" method="post">
-      <input type="text" name="newItem" placeholder="Escriba">
-      <button type="submit" name="button">Hágale!</button>
-    </form>
+
+      <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="Nueva tarea" autocomplete="off">
+        <button type="submit" name="button">+</button>
+      </form>
+    </div>
+
   </body>
 </html>

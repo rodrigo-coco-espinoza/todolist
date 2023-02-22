@@ -7,7 +7,8 @@ let
   items = [ "Lavarse los dientes", "Desayunar" ];
 
 app.set( "view engine", "ejs" );
-app.use( bodyParser.urlencoded( { exteneded: true }));
+app.use( bodyParser.urlencoded( { extended: true }));
+app.use( express.static( "public" ));
 
 app.get( "/", function( req, res ){
   let
@@ -17,7 +18,7 @@ app.get( "/", function( req, res ){
       day: "numeric",
       month: "long"
     },
-    day = today.toLocaleDateString( "en-US", options );
+    day = today.toLocaleDateString( "es-ES", options );
 
   res.render( "lists", { kinfOfDay: day, itemList: items });
 });
