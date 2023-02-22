@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>To Do List</title>
-  </head>
-  <body>
-    <div class="box" id="heading">
-      <h1><%= kinfOfDay %></h1>
-    </div>
-    <div class="box">
-      <% for ( const item of itemList ){ %>
-        <div class="item">
-          <input type="checkbox">
-          <p><%= item %></p>
-        </div>
-      <% } %>
+<%- include( "header" ) -%>
 
-      <form class="item" action="/" method="post">
-        <input type="text" name="newItem" placeholder="Nueva tarea" autocomplete="off">
-        <button type="submit" name="button">+</button>
-      </form>
-    </div>
+  <div class="box" id="heading">
+    <h1><%= listTitle %></h1>
+  </div>
+  <div class="box">
+    <% for ( const item of itemList ){ %>
+      <div class="item">
+        <input type="checkbox">
+        <p><%= item %></p>
+      </div>
+    <% } %>
 
-  </body>
-</html>
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" placeholder="Nueva tarea" autocomplete="off">
+      <button type="submit" name="button">+</button>
+    </form>
+  </div>
+
+<%- include( "footer" ) -%>
